@@ -1,0 +1,47 @@
+VOCABULARY
+
+#local branch=computer ; remote branch=github
+#cd.. "upward" ; cd <file name> "downward" ; dir "existing files"
+#find "<your_strings>" filename ##You can use wildcards (* and ?) to specify multiple files. *.txt will search all text files in the current directory.
+
+#mkdir <doc name> "create doc" ; copy <doc name> ; rm <doc name>
+#type <doc name.txt> "open it" ; 
+
+GIT CREATE THE LOCAL BRANCH FROM REMOTE BRANCH 
+
+#1. create new repository on github
+
+#2. clone repository on local directory 
+git clone https://github.com/martischang/Smar-.git <folder name>
+OR 
+git remote add <folder name> https://github.com/martischang/Smar-.git
+
+#3. rename the local branch from master to main (alignement with ethical standards..)
+git branch -M main
+
+GIT PUSHING DOCUMENT => GITHUB 
+
+#1. stage change (select docs)
+git add .
+OR 
+git add <doc name>
+
+#2. commit change (create a new version of your project, and a unique identifier = commit hash or SHA-1 hash)
+git commit -m "Your commit message here"
+
+#3. push commit to GitHub 
+git push -u <folder name> main
+
+#4. enjoy the -u tracking of <folder name>
+#Once the tracking relationship is established, you can use simple git push and git pull commands without specifying the remote repository and branch each time. Git will automatically know which remote branch to push to or pull from based on the tracking information.
+# Push local changes to the remote "main" branch
+git push
+# Pull changes from the remote "main" branch
+git pull 
+
+GIT PULLING GITHUB => DOCUMENT 
+#1 git fetch command to retrieve the latest changes from the GitHub 
+git fetch <folder name>
+
+#2 merge changes with local branch
+git merge <folder name>/main
